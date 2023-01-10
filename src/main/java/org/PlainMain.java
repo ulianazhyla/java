@@ -6,7 +6,6 @@ public class PlainMain {
             System.out.println("We have flying on plane " + Victory.PlaneModelName);
             Victory.fly("Washington");
             System.out.println("on board we have " + Victory.passenger + " passenger");
-//        System.out.println("Overboard " + Victory.weatherOverboard + " degree");
             System.out.println("By the way, on our plane Victory we have some famous people : ");
 
             String[] famousPassengers = new String[5];
@@ -26,7 +25,6 @@ public class PlainMain {
                     break;
                 default:
                     System.out.println("It`s joke!");
-
             }
 
 
