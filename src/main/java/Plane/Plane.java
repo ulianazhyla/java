@@ -15,6 +15,7 @@ public class Plane {
     public String getPassenger (int index) { //зачем создавать это метод?//
         return famousPassengers[index];
     }
+
     public int weatherOverboard = 18;
     public void setWeatherOverboard(int weatherOverboard) {
         this.weatherOverboard = weatherOverboard;
@@ -34,4 +35,3 @@ public class Plane {
         System.out.println(PlaneModelName + " is flying to " + direction);
     }
 }
-
