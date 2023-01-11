@@ -2,6 +2,8 @@ package Plane;
 
 public class Plane {
     public int passenger = 233;
+    String[] famousPassengers = new String[5];
+
 
     public String[] getFamousPassengers() {
         return famousPassengers;
@@ -10,28 +12,36 @@ public class Plane {
         this.famousPassengers = famousPassengers;
     }
 
-    String[] famousPassengers = new String[5];
-
     public String getPassenger (int index) { //зачем создавать это метод?//
         return famousPassengers[index];
-    }
-
-    public int weatherOverboard = 18;
-    public void setWeatherOverboard(int weatherOverboard) {
-        this.weatherOverboard = weatherOverboard;
     }
 
     public int getPassenger() {
         return passenger;
     }
 
-    public String PlaneModelName = "Boeing 777";
-
-    public String getPlainModelName() {
-        return PlaneModelName;
-    }
-
-    public void fly(String direction) {
-        System.out.println(PlaneModelName + " is flying to " + direction);
-    }
 }
+
+// ===================================================================================================LESSON 1==========
+//public class Plane {
+//    public int passenger = 233;
+//    public String PlaneModelName = "Boeing 777";
+//    public int weatherOverboard = 18;
+//
+//    public void setWeatherOverboard(int weatherOverboard) {
+//        this.weatherOverboard = weatherOverboard;
+//    }
+//
+//    public int getPassenger() {
+//        return passenger;
+//    }
+//
+//    public String getPlainModelName() {
+//        return PlaneModelName;
+//    }
+//
+//    public void fly(String direction) {
+//        System.out.println("Our " + PlaneModelName + " is flying to " + direction);
+//    }
+//}
+
