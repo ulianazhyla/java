@@ -3,21 +3,53 @@ package Car;
 public class Car {
 
     public String color;
+    public String licencePlate;
+    public int speed;
+    public String currentTrafficLights;
 
-    public Car (String carColor){
-        color = "grey";
-//        System.out.println("All Car from factory are " + color);
-//        System.out.println("=====================");
+    public Car (String carColor, String plateNumber){
+        speed = 0;
+        currentTrafficLights = "yellow";
+        licencePlate = plateNumber;
+
     }
 
-    public String getCarColor (){
-        return color;
+    public String getCurrentTrafficLights () { //какой сейчас горит светофор для каждой машины.По умолчанию одинаковый для всех цвет, т.к. задан обший параметр для объекта.
+        return currentTrafficLights;
+    }
+    public void crossTheCrossRoad (Car[] otherCars) {
+        for (int i = 0; i < otherCars.length; i++) {
+            if (!licencePlate.equals(otherCars[i].licencePlate)) {
+                if (speed != 0 && otherCars[i].speed != 0) {
+                    System.out.println("Car accident!");
+                }
+                if (speed == 0 && otherCars[i].speed == 0)
+                    System.out.println("nothing happened!");
+                else {
+                    System.out.println("We pass by");
+                }
+            }
+        }
     }
 
-    public void paintCar (String newCarColor) {
-        color = newCarColor;
+    public void setCurrentTrafficLights (String newTrafficColor){ // сообщаем, какой цвет должен стать
+        switch (newTrafficColor){
+            case ("red"):
+                speed = 0;
+                currentTrafficLights = newTrafficColor;
+                break;
+            case ("yellow"):
+                currentTrafficLights = newTrafficColor;
+                System.out.println("Attention! wait for green!");
+                break;
+            case ("green"):
+                speed = 60;
+                currentTrafficLights = newTrafficColor;
+                break;
+            default:
+                System.out.println("do nothing!");
+        }
     }
-
 }
 
 
