@@ -1,6 +1,9 @@
 package Car;
 
 public class TrafficLights {
-    public String [] trafficLightsColor = {"red","yellow", "green" };
+    public void sendSignal (Car targetCar, String color){ //светофор отправляет какой-то конкретной машине новый цвет светофора
+        targetCar.setCurrentTrafficLights(color);
+
+    }
 }
 

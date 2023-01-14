@@ -7,30 +7,47 @@ public class Car {
     public int speed;
     public String currentTrafficLights;
 
-    public Car (String carColor, String plateNumber){
+    public Car(String carColor, String plateNumber) {
         speed = 0;
         currentTrafficLights = "yellow";
         licencePlate = plateNumber;
 
     }
 
-    public String getCurrentTrafficLights () { //какой сейчас горит светофор для каждой машины.По умолчанию одинаковый для всех цвет, т.к. задан обший параметр для объекта.
+    public String getCurrentTrafficLights() { //какой сейчас горит светофор для каждой машины.По умолчанию одинаковый для всех цвет, т.к. задан обший параметр для объекта.
         return currentTrafficLights;
     }
-    public void crossTheCrossRoad (Car[] otherCars) {
+//    public void crossTheCrossRoad(Car[] otherCars) {
+//        for (int i = 0; i < otherCars.length; i++) {
+//            if (speed != 0 && otherCars[i].speed != 0
+//                    && !licencePlate.equals(otherCars[i].licencePlate)){
+//                System.out.println("Car accident!");
+//                }
+////                if (speed == 0 && otherCars[i].speed == 0) {
+////                    System.out.println("nothing happened!");
+////                }
+//                else if (!licencePlate.equals(otherCars[i].licencePlate)){
+//                    System.out.println("We pass by");
+//                }
+//        }
+//    }
+    public void crossTheCrossRoad(Car[] otherCars) {
         for (int i = 0; i < otherCars.length; i++) {
-            if (!licencePlate.equals(otherCars[i].licencePlate)) {
+            if (!licencePlate.equals(otherCars[i].licencePlate)) { //условие, чтобы не проехать сквозь себя самого
                 if (speed != 0 && otherCars[i].speed != 0) {
-                    System.out.println("Car accident!");
+                    System.out.println("Car accident between " +licencePlate + " and " + otherCars[i].licencePlate);
                 }
-                if (speed == 0 && otherCars[i].speed == 0)
+                if (speed == 0 && otherCars[i].speed == 0) {
                     System.out.println("nothing happened!");
-                else {
+                } else {
                     System.out.println("We pass by");
                 }
             }
         }
     }
+
+
+
 
     public void setCurrentTrafficLights (String newTrafficColor){ // сообщаем, какой цвет должен стать
         switch (newTrafficColor){
@@ -40,7 +57,6 @@ public class Car {
                 break;
             case ("yellow"):
                 currentTrafficLights = newTrafficColor;
-                System.out.println("Attention! wait for green!");
                 break;
             case ("green"):
                 speed = 60;

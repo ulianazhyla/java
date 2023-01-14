@@ -1,17 +1,39 @@
 package Car;
 public class CarMain {
     public static void main(String... args) {
-        Car myCar = new Car("black", "AA0000AA");
-        Car bobsCar = new Car("navy","AA0001AA");
-        Car aliceCar = new Car("pink","AA0002AA");
-        Car policeCar = new Car("white","AA0003AA");
-        Car[] crossingCar = {myCar, aliceCar, bobsCar, policeCar};
+        TrafficLights trafficLights = new TrafficLights();
 
-        myCar.setCurrentTrafficLights("green"); //внимание загорелся вот этот цвет светофора
-        //System.out.println(myCar.getCurrentTrafficLights()); ////какой сейчас горит светофор для каждой машины
+        Car myCar = new Car("black", "MyCar");
+        Car bobsCar = new Car("navy","bobsCar");
+        Car aliceCar = new Car("pink","aliceCar");
+        Car policeCar = new Car("white","policeCar");
 
+        Car[] crossingCar = {myCar, bobsCar, aliceCar, policeCar};
 
-        myCar.crossTheCrossRoad(crossingCar); //смотрим проехали или авария
+//        trafficLights.sendSignal(myCar, "red");
+//        trafficLights.sendSignal(aliceCar, "red");
+//        trafficLights.sendSignal(bobsCar, "red");
+//        trafficLights.sendSignal(policeCar, "red");
+//        moveCars(crossingCar);
+
+        trafficLights.sendSignal(myCar, "green");
+        trafficLights.sendSignal(bobsCar, "green");
+        trafficLights.sendSignal(aliceCar, "green");
+        trafficLights.sendSignal(policeCar, "green");
+        moveCars(crossingCar);
+
+//        myCar.crossTheCrossRoad(crossingCar); //смотрим проехали или авария
+
+//        myCar.setCurrentTrafficLights("green");//внимание загорелся вот этот цвет светофора
+//        policeCar.setCurrentTrafficLights("green");
+//        System.out.println(myCar.getCurrentTrafficLights()); ////какой сейчас горит светофор для каждой машины
+
+    }
+
+    public static void moveCars(Car[] cars) {
+        for (int i = 0; i < cars.length; i++) {
+            cars[i].crossTheCrossRoad(cars);
+        }
     }
 }
 
