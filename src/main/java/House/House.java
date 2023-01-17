@@ -1,6 +1,6 @@
 package House;
 public class House {
-    public String heather;
+    private String heather;
 
     public void makeWarm (int temperatureInHouse) {
         if (temperatureInHouse<18) {
@@ -12,11 +12,11 @@ public class House {
             System.out.println("the heather is turn off");
         }
     }
-    public void turnOnHeather (String turnOn) {
+    private void turnOnHeather (String turnOn) {
         heather = turnOn;
     }
 
-    public void turnOffHeather (String turnOf) {
+    private void turnOffHeather (String turnOf) {
         heather = turnOf;
     }
 

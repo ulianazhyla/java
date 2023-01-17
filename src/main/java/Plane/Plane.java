@@ -2,8 +2,8 @@ package Plane;
 
 public class Plane {
 
-    public int places;
-    public String direction;
+    private int places;
+    private String direction;
     String[] placesInAmericanAirlines = new String[5];
 
     public Plane(String direction) {

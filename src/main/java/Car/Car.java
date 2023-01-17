@@ -2,10 +2,10 @@ package Car;
 
 public class Car {
 
-    public String color;
-    public String licencePlate;
-    public int speed;
-    public String currentTrafficLights;
+    private String color;
+    private String licencePlate;
+    private int speed;
+    private String currentTrafficLights;
 
     public Car(String carColor, String plateNumber) {
         speed = 0;
