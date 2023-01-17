@@ -11,26 +11,12 @@ public class Car {
         speed = 0;
         currentTrafficLights = "yellow";
         licencePlate = plateNumber;
-
     }
 
     public String getCurrentTrafficLights() { //какой сейчас горит светофор для каждой машины.По умолчанию одинаковый для всех цвет, т.к. задан обший параметр для объекта.
         return currentTrafficLights;
     }
-//    public void crossTheCrossRoad(Car[] otherCars) {
-//        for (int i = 0; i < otherCars.length; i++) {
-//            if (speed != 0 && otherCars[i].speed != 0
-//                    && !licencePlate.equals(otherCars[i].licencePlate)){
-//                System.out.println("Car accident!");
-//                }
-////                if (speed == 0 && otherCars[i].speed == 0) {
-////                    System.out.println("nothing happened!");
-////                }
-//                else if (!licencePlate.equals(otherCars[i].licencePlate)){
-//                    System.out.println("We pass by");
-//                }
-//        }
-//    }
+
     public void crossTheCrossRoad(Car[] otherCars) {
         for (int i = 0; i < otherCars.length; i++) {
             if (!licencePlate.equals(otherCars[i].licencePlate)) { //условие, чтобы не проехать сквозь себя самого
@@ -45,9 +31,6 @@ public class Car {
             }
         }
     }
-
-
-
 
     public void setCurrentTrafficLights (String newTrafficColor){ // сообщаем, какой цвет должен стать
         switch (newTrafficColor){

@@ -10,12 +10,6 @@ public class CarMain {
 
         Car[] crossingCar = {myCar, bobsCar, aliceCar, policeCar};
 
-//        trafficLights.sendSignal(myCar, "red");
-//        trafficLights.sendSignal(aliceCar, "red");
-//        trafficLights.sendSignal(bobsCar, "red");
-//        trafficLights.sendSignal(policeCar, "red");
-//        moveCars(crossingCar);
-
         trafficLights.sendSignal(myCar, "green");
         trafficLights.sendSignal(bobsCar, "green");
         trafficLights.sendSignal(aliceCar, "green");
