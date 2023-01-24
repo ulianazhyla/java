@@ -1,35 +1,58 @@
 package Car;
+
+import java.util.ArrayList;
+
 public class CarMain {
-    public static void main(String... args) {
-        TrafficLights trafficLights = new TrafficLights();
+    public static void main (String... args){
+        ArrayList <String> car1 = new ArrayList<>();
+        car1.add("Nick");
+        car1.add("Joe");
+        
+        ArrayList<String> car2 = new ArrayList<>();
+        car2.add("Kris");
+        car2.add("Amina");
 
-        Car myCar = new Car("black", "MyCar");
-        Car bobsCar = new Car("navy","bobsCar");
-        Car aliceCar = new Car("pink","aliceCar");
-        Car policeCar = new Car("white","policeCar");
+        car1.addAll(car2);
+        System.out.println("After moving from car2 to car1 in car1 passenger:");
 
-        Car[] crossingCar = {myCar, bobsCar, aliceCar, policeCar};
-
-        trafficLights.sendSignal(myCar, "green");
-        trafficLights.sendSignal(bobsCar, "green");
-        trafficLights.sendSignal(aliceCar, "green");
-        trafficLights.sendSignal(policeCar, "green");
-        moveCars(crossingCar);
-
-//        myCar.crossTheCrossRoad(crossingCar); //смотрим проехали или авария
-
-//        myCar.setCurrentTrafficLights("green");//внимание загорелся вот этот цвет светофора
-//        policeCar.setCurrentTrafficLights("green");
-//        System.out.println(myCar.getCurrentTrafficLights()); ////какой сейчас горит светофор для каждой машины
-
-    }
-
-    public static void moveCars(Car[] cars) {
-        for (int i = 0; i < cars.length; i++) {
-            cars[i].crossTheCrossRoad(cars);
+        for (int i = 0; i < car1.size(); i++) {
+            System.out.println(car1.get(i));
         }
+
+        System.out.println("");
+       car1.removeAll(car2);
+        System.out.println("passenger from car2 moved back and now on car1 passenger:");
+        System.out.println(car1);
     }
 }
+//    public static void main(String... args) {
+//        TrafficLights trafficLights = new TrafficLights();
+//
+//        Car myCar = new Car("black", "MyCar");
+//        Car bobsCar = new Car("navy","bobsCar");
+//        Car aliceCar = new Car("pink","aliceCar");
+//        Car policeCar = new Car("white","policeCar");
+//
+//        Car[] crossingCar = {myCar, bobsCar, aliceCar, policeCar};
+//
+//        trafficLights.sendSignal(myCar, "green");
+//        trafficLights.sendSignal(bobsCar, "green");
+//        trafficLights.sendSignal(aliceCar, "green");
+//        trafficLights.sendSignal(policeCar, "green");
+//        moveCars(crossingCar);
+//
+////        myCar.crossTheCrossRoad(crossingCar); //смотрим проехали или авария
+//
+////        myCar.setCurrentTrafficLights("green");//внимание загорелся вот этот цвет светофора
+////        policeCar.setCurrentTrafficLights("green");
+////        System.out.println(myCar.getCurrentTrafficLights()); ////какой сейчас горит светофор для каждой машины
+//    }
+//    public static void moveCars(Car[] cars) {
+//        for (int i = 0; i < cars.length; i++) {
+//            cars[i].crossTheCrossRoad(cars);
+//        }
+//    }
+//}
 
 // ===================================================================================================LESSON 2==========
 //public class CarMain {

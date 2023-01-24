@@ -13,6 +13,8 @@ public class HouseMain {
         bathroomThings[4] = "Heater for drying clothes";
         bathroomThings[5] = "Sink";
 
+        System.out.println("in your house now " + smartHouse.getTemperatureInHouse() + " degree");
+
     }
 }
 

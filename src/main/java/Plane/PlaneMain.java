@@ -1,31 +1,46 @@
 package Plane;
 
 import java.security.SecureRandom;
+import java.util.HashMap;
+import java.util.Map;
 
 public class PlaneMain {
-    public static void main(String... args) {
-        Plane americanAirlines = new Plane("Pennsylvania");
-        Plane britishAirways = new Plane("London");
-        Plane ukraineInternationalAirlines = new Plane("Lviv");
-        Plane emirates = new Plane("Dubai");
+    public static void main(String...args) {
+        HashMap<String, String> passenger = new HashMap<>();
+        passenger.put("1", "Uliana Zhyla");
+        passenger.put("2", "Andrii Zhyla");
+        passenger.put("3", null);
 
-        String[] placesInAmericanAirlines = new String[5];
-        placesInAmericanAirlines[0] = null;
-        placesInAmericanAirlines[1] = "Iryna Palamarchuk";
-        placesInAmericanAirlines[2] = "Vasylyi Bogdan";
-        placesInAmericanAirlines[3] = "";
-        placesInAmericanAirlines[4] = "John Smith";
+//        System.out.println(passenger.get("1"));
+//        System.out.println(passenger.get("2"));
+//        System.out.println(passenger.get("3"));
 
-        americanAirlines.setPlacesInAmericanAirlines(placesInAmericanAirlines);
-        System.out.println(americanAirlines.getPlaces());
-        System.out.println(placesInAmericanAirlines != null);
-
-
-
+        for (Map.Entry e : passenger.entrySet()) {
+            System.out.println(e.getKey()); //получаем ключ (т.е. первое значение)
+            System.out.println(e.getValue()); // получаем данние (т.е. второе значение)
+        }
     }
 
 }
-
+//    public static void main(String... args) {
+//        Plane americanAirlines = new Plane("Pennsylvania");
+//        Plane britishAirways = new Plane("London");
+//        Plane ukraineInternationalAirlines = new Plane("Lviv");
+//        Plane emirates = new Plane("Dubai");
+//
+//        String[] placesInAmericanAirlines = new String[5];
+//        placesInAmericanAirlines[0] = null;
+//        placesInAmericanAirlines[1] = "Iryna Palamarchuk";
+//        placesInAmericanAirlines[2] = "Vasylyi Bogdan";
+//        placesInAmericanAirlines[3] = "";
+//        placesInAmericanAirlines[4] = "John Smith";
+//
+//        americanAirlines.setPlacesInAmericanAirlines(placesInAmericanAirlines);
+//        System.out.println(americanAirlines.getPlaces());
+//        System.out.println(placesInAmericanAirlines != null);
+//
+//    }
+//}
 
 //    ===================================================================================================LESSON 2=======
 //    public static void main(String... args){
